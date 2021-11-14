@@ -1,0 +1,7 @@
+C:\Users\beaut\Desktop\Komodo\02_Claims_Console\bin\Debug\02_Claims_Console.exe.config
+C:\Users\beaut\Desktop\Komodo\02_Claims_Console\bin\Debug\02_Claims_Console.exe
+C:\Users\beaut\Desktop\Komodo\02_Claims_Console\bin\Debug\02_Claims_Console.pdb
+C:\Users\beaut\Desktop\Komodo\02_Claims_Console\obj\Debug\02_Claims_Console.csproj.CoreCompileInputs.cache
+C:\Users\beaut\Desktop\Komodo\02_Claims_Console\obj\Debug\02_Claims_Console.exe
+C:\Users\beaut\Desktop\Komodo\02_Claims_Console\obj\Debug\02_Claims_Console.pdb
+C:\Users\beaut\Desktop\Komodo\02_Claims_Console\obj\Debug\02_Claims_Console.csproj.AssemblyReference.cache
