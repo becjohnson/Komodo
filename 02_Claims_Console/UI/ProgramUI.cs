@@ -118,6 +118,7 @@ namespace _02_Claims_Console.UI
         }
         private void DisplayNextClaim()
         {
+            Console.Clear();
             Queue<Claim> queueOfClaims = _repo.GetClaims();
             Console.WriteLine("Here are the details for the next claim to be handled:");
             foreach (Claim claim in queueOfClaims.ToList())
@@ -135,15 +136,17 @@ namespace _02_Claims_Console.UI
                 switch (input)
                 {
                     case "y":
-                        queueOfClaims.Enqueue(claim);
+                        Console.Clear();
+                        queueOfClaims.Dequeue();
+                        Console.Clear();
+                        _repo.GetNextClaim();
                         break;
                     case "n":
-                        queueOfClaims.Dequeue();
+                        RunMenu();
                         break;
                     default:
                         break;
                 }
-
             }
             AnyKey();
         }
