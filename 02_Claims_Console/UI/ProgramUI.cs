@@ -122,30 +122,28 @@ namespace _02_Claims_Console.UI
             Console.WriteLine("Here are the details for the next claim to be handled:");
             foreach (Claim claim in queueOfClaims.ToList())
             {
-                if (claim.Id == 1)
+                Console.WriteLine(
+                    $"ClaimID: {claim.Id}\n" +
+                    $"Type: {claim.ClaimType}\n" +
+                    $"Description: {claim.Description}\n" +
+                    $"Amount: {claim.Amount}\n" +
+                    $"DateOfIncident: {claim.DateOfIncident}\n" +
+                    $"DateOfClaim: {claim.DateOfClaim}\n" +
+                    $"IsValid: {claim.IsValid}");
+                Console.WriteLine("Would you like to take care of this claim?(y/n)");
+                string input = Console.ReadLine().ToLower();
+                switch (input)
                 {
-                    Console.WriteLine(
-                        $"ClaimID: {claim.Id}\n" +
-                        $"Type: {claim.ClaimType}\n" +
-                        $"Description: {claim.Description}\n" +
-                        $"Amount: {claim.Amount}\n" +
-                        $"DateOfIncident: {claim.DateOfIncident}\n" +
-                        $"DateOfClaim: {claim.DateOfClaim}\n" +
-                        $"IsValid: {claim.IsValid}");
-                    Console.WriteLine("Would you like to take care of this claim?(y/n)");
-                    string input = Console.ReadLine().ToLower();
-                    switch (input)
-                    {
-                        case "y":
-                            queueOfClaims.Enqueue(claim);
-                            break;
-                        case "n":
-                            queueOfClaims.Dequeue();
-                            break;
-                        default:
-                            break;
-                    }
+                    case "y":
+                        queueOfClaims.Enqueue(claim);
+                        break;
+                    case "n":
+                        queueOfClaims.Dequeue();
+                        break;
+                    default:
+                        break;
                 }
+
             }
             AnyKey();
         }
