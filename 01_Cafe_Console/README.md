@@ -1,51 +1,52 @@
-﻿#h1 Komodo Cafe
+﻿# Komodo Cafe #
 
-#h2 Motivation
+## Motivation ##
 ---
-#h3 For practice and for class... To become the best developer that I can be. 
+### This is for practice, for class... To become the best developer that I can be. ###  
 
-#h2 Build Status
+## Build Status ##  
 ---
-#h3 Completed
+### Completed ###  
 
-#h2 Code Style
+## Code Style ##  
 ---
-#h3 Written in C#, using generic CRUD repository pattern
+### Written in C#, using generic CRUD repository pattern ###  
 
-#h2 Framework Used
+## Framework Used ##  
 ---
-#h3 .NET framework
+### .NET framework ###  
 
-#h2 Features
+
+## Features ##  
 ---
-#h3 -Create a new menu item
-#h3 -See all menu items
-#h3 -Fetch a menu item by number
-#h3 -Delete a menu item
+### -Create a new menu item ###  
+### -See all menu items ###  
+### -Fetch a menu item by number ###  
+### -Delete a menu item ###  
 
-#h2 Installation
+## Installation ## 
 ---
-#h3 Clone on the command line & open with Visual Studio Community... Then run the application
+### Clone on the command line & open with Visual Studio Community... Then run the application ###  
 
-#h2 Test
+## Test ## 
 ---
-#h3 To test, run 01_Cafe_Tests
+### To test, run 01_Cafe_Tests
 
-#h2 How To Use
+## How To Use
 ---
-#h3 To create a new menu item, follow the prompts in the application after install.
-#h3 To delete an existing menu item, follow the prompts in the application after install.
-#h3 To fetch an existing menu item by number, follow the prompts in the application after install.
+### To create a new menu item, follow the prompts in the application after install.
+### To delete an existing menu item, follow the prompts in the application after install.
+### To fetch an existing menu item by number, follow the prompts in the application after install.
 
-#h2 Contribute
+## Contribute
 ---
-#h3 No contributions necessary at this time.
+### No contributions necessary at this time.
 
-#h2 Credits
+## Credits
 ---
-#h3 Thanks to EFA
+### Thanks to EFA
 
-#h2 License
+## License
 ---
 The MIT License (MIT)
 
