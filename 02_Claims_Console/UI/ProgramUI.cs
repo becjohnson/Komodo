@@ -88,7 +88,7 @@ namespace _02_Claims_Console.UI
             Console.WriteLine("Date of Claim:");
             claim.DateOfClaim = Convert.ToDateTime(Console.ReadLine());
             Console.Clear();
-            Console.WriteLine("This claim is valid(t/f)");
+            Console.WriteLine("This claim is valid (true/false):");
             claim.IsValid = Convert.ToBoolean(Console.ReadLine());
             Console.Clear();
             if (_repo.AddClaimToDirectory(claim))
@@ -120,7 +120,7 @@ namespace _02_Claims_Console.UI
         {
             Console.Clear();
             Queue<Claim> queueOfClaims = _repo.GetClaims();
-            Console.WriteLine("Here are the details for the next claim to be handled:");
+            Console.WriteLine("Here are the details for the next claim to be handled:\n\n");
             foreach (Claim claim in queueOfClaims.ToList())
             {
                 Console.WriteLine(
@@ -130,7 +130,7 @@ namespace _02_Claims_Console.UI
                     $"Amount: {claim.Amount}\n" +
                     $"DateOfIncident: {claim.DateOfIncident}\n" +
                     $"DateOfClaim: {claim.DateOfClaim}\n" +
-                    $"IsValid: {claim.IsValid}");
+                    $"IsValid: {claim.IsValid}\n\n");
                 Console.WriteLine("Would you like to take care of this claim?(y/n)");
                 string input = Console.ReadLine().ToLower();
                 switch (input)
@@ -145,6 +145,7 @@ namespace _02_Claims_Console.UI
                         RunMenu();
                         break;
                     default:
+                        Console.WriteLine("Please enter 'Y' or 'N'...");
                         break;
                 }
             }

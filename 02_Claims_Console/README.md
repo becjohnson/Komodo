@@ -7,6 +7,7 @@
 ## Build Status ##  
 ---
 ### Completed ###  
+(but would like to add update functionality)
 
 ## Code Style ##  
 ---
@@ -40,6 +41,7 @@
 ## Contribute
 ---
 ### No contributions necessary at this time.
+(but would like to add update functionality)
 
 ## Credits
 ---
