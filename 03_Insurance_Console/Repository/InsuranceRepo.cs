@@ -82,5 +82,19 @@ namespace _03_Insurance_Console.Repository
                 return false;
             }
         }
+        public bool EditBadge(int id, string doors, bool isAdded)
+        {
+            List<string> listOfBadges = _badgeDictionary[id];
+            if (isAdded)
+            {
+                listOfBadges.Add(doors);
+                return true;
+            }
+            else
+            {
+                listOfBadges.Remove(doors);
+                return false;
+            }
+        }
     }
 }

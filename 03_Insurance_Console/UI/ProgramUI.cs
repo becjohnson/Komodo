@@ -85,11 +85,14 @@ namespace _03_Insurance_Console.UI
         }
         public void GetBadges()
         {
+            Console.Clear();
             Dictionary<int, List<string>> keyValuePairs = _repo.GetBadges();
             foreach (var keyvalue in keyValuePairs)
             {
                 DisplayBadge(keyvalue.Key);
+                AnyKey();
             }
+            AnyKey();
         }
         public void AnyKey()
         {

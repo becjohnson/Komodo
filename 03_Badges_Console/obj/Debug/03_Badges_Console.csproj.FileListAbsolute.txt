@@ -1,0 +1,7 @@
+C:\Users\beaut\Desktop\Komodo\03_Badges_Console\bin\Debug\03_Badges_Console.exe.config
+C:\Users\beaut\Desktop\Komodo\03_Badges_Console\bin\Debug\03_Badges_Console.exe
+C:\Users\beaut\Desktop\Komodo\03_Badges_Console\bin\Debug\03_Badges_Console.pdb
+C:\Users\beaut\Desktop\Komodo\03_Badges_Console\obj\Debug\03_Badges_Console.csproj.AssemblyReference.cache
+C:\Users\beaut\Desktop\Komodo\03_Badges_Console\obj\Debug\03_Badges_Console.csproj.CoreCompileInputs.cache
+C:\Users\beaut\Desktop\Komodo\03_Badges_Console\obj\Debug\03_Badges_Console.exe
+C:\Users\beaut\Desktop\Komodo\03_Badges_Console\obj\Debug\03_Badges_Console.pdb
