@@ -104,7 +104,6 @@ namespace _02_Claims_Console.UI
         }
         private void DisplayClaims(Claim claim)
         {
-
             Console.WriteLine($"{claim.Id}      {claim.ClaimType}     {claim.Description}   ${claim.Amount}        {claim.DateOfIncident.ToString("MM/dd/yy")}                   {claim.DateOfClaim.ToString("MM/dd/yy")}            {claim.IsValid}");
         }
         private void SeedContent()

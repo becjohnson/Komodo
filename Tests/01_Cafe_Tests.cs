@@ -17,7 +17,7 @@ namespace Tests
             Assert.IsTrue(addResult);
         }
         [TestMethod]
-        public void ShowAllMenuItems_ShouldCorrectCollection()
+        public void ShowAllMenuItems_ShouldReturnTrue()
         {
             Menu item = new Menu();
             MenuRepo repository = new MenuRepo();
