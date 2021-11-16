@@ -12,6 +12,7 @@ namespace _03_Badges_Console
         protected readonly BadgeRepo _repo = new BadgeRepo();
         public void Run()
         {
+            SeedContent();
             RunMenu();
         }
         public void RunMenu()
@@ -102,7 +103,7 @@ namespace _03_Badges_Console
                 {
                     int key = badge.Key;
                     List<string> values = badge.Value;
-                    Console.WriteLine(key + " has access to doors " + string.Join("&", values));
+                    Console.WriteLine(key + " has access to doors " + string.Join(" & ", values));
                     AnyKey();
                     Console.Clear();
                     Console.WriteLine("What would you like to do?");
@@ -114,17 +115,24 @@ namespace _03_Badges_Console
                         case "1":
                             Console.WriteLine("Which door would you like to remove?");
                             string oldDoor = Console.ReadLine().ToUpper();
-                            bool wasRemoved = true;
                             if (keyValuePairs.ContainsKey(badgeId))
                             {
                                 _repo.RemoveDoor(badgeId, oldDoor);
                                 Console.WriteLine("Door removed.");
-                                Console.WriteLine(key + " has access to doors " + string.Join("&", values));
+                                Console.WriteLine(key + " has access to doors " + string.Join(" & ", values));
                                 AnyKey();
                             }
                             break;
                         case "2":
                             Console.WriteLine("Which door would you like to add?");
+                            string newDoor = Console.ReadLine().ToUpper();
+                            if (keyValuePairs.ContainsKey(badgeId))
+                            {
+                                _repo.AddDoor(badgeId, newDoor);
+                                Console.WriteLine("Door added.");
+                                Console.WriteLine(key + " has access to doors " + string.Join(" & ", values));
+                                AnyKey();
+                            }
                             break;
                         default:
                             Console.WriteLine("Please select a valid option...");
@@ -141,12 +149,12 @@ namespace _03_Badges_Console
         {
             Console.Clear();
             Dictionary<int, List<string>> keyValuePairs = _repo.GetBadges();
+            Console.WriteLine("Badge#           Door Access\n");
             foreach (var badge in keyValuePairs)
             {
                 int key = badge.Key;
                 List<string> values = badge.Value;
-                Console.WriteLine("Badge#           Door Access\n");
-                Console.WriteLine(key + "              [" + string.Join(",", values) + "]\n\n");
+                Console.WriteLine(key + "              [" + string.Join(",", values) + "]\n");
             }
             AnyKey();
         }
@@ -154,6 +162,12 @@ namespace _03_Badges_Console
         {
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
+        }
+        public void SeedContent()
+        {
+            _repo.CreateNewBadge(1727, new List<string> { "A5", "A9" });
+            _repo.CreateNewBadge(1728, new List<string> { "A4", "A3" });
+            _repo.CreateNewBadge(1729, new List<string> { "A2", "A1" });
         }
     }
 }

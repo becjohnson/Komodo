@@ -1,4 +1,5 @@
-﻿using _03_Insurance_Console.Repository;
+﻿using _03_Badges_Console.Repository;
+using _03_Insurance_Console.Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace Tests
     public class Insurance_Tests
     {
         private Badge _badges;
-        private InsuranceRepo _repo;
+        private BadgeRepo _repo;
         [TestInitialize]
         public void Arrange()
         {
