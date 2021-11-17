@@ -30,7 +30,7 @@
 
 ## Test ## 
 ---
-### To test, run 01_Cafe_Tests
+### To test, run 01_Claims_Tests
 
 ## How To Use
 ---

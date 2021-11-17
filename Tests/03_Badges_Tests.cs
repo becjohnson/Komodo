@@ -8,11 +8,6 @@ namespace Tests
     [TestClass]
     public class Badges_Tests
     {
-        private readonly Dictionary<int, List<string>> _badgeDictionary = new Dictionary<int, List<string>>
-        {
-            {12345, new List<string> {"A9", "A5" } },
-            {23456, new List<string> {"A7", "A8" } }
-        };
         private BadgeRepo _repo;
         [TestInitialize]
         public void Arrange()
@@ -41,7 +36,6 @@ namespace Tests
         [TestMethod]
         public void AddDoor_ShouldComeBackTrue()
         {
-            Badge badge = new Badge();
             string door = "A4";
             int id = 12345;
             bool addDoor = _repo.AddDoor(id, door);
