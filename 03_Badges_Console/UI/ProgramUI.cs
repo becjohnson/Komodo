@@ -21,7 +21,7 @@ namespace _03_Badges_Console
             while (continueToRun)
             {
                 Console.Clear();
-                Console.WriteLine("Hello Security Admin. What would you like to do?\n" +
+                Console.WriteLine("Hello Security Admin. What would you like to do?\n\n" +
                 "1. Add a badge\n" +
                 "2. Edit a badge\n" +
                 "3. List all badges\n");
@@ -104,34 +104,47 @@ namespace _03_Badges_Console
                     int key = badge.Key;
                     List<string> values = badge.Value;
                     Console.WriteLine(key + " has access to doors " + string.Join(" & ", values));
+                    Console.WriteLine("\n");
                     AnyKey();
                     Console.Clear();
-                    Console.WriteLine("What would you like to do?");
+                    Console.WriteLine("What would you like to do?\n");
                     Console.WriteLine("1. Remove a door");
                     Console.WriteLine("2. Add a door");
                     string input = Console.ReadLine();
                     switch (input)
                     {
                         case "1":
+                            Console.Clear();
                             Console.WriteLine("Which door would you like to remove?");
                             string oldDoor = Console.ReadLine().ToUpper();
                             if (keyValuePairs.ContainsKey(badgeId))
                             {
+                                Console.Clear();
                                 _repo.RemoveDoor(badgeId, oldDoor);
-                                Console.WriteLine("Door removed.");
-                                Console.WriteLine(key + " has access to doors " + string.Join(" & ", values));
+                                Console.WriteLine("Door removed.\n");
                                 AnyKey();
+                                Console.Clear();
+                                Console.WriteLine(key + " has access to doors " + string.Join(" & ", values));
+                                Console.WriteLine("\n");
+                                AnyKey();
+                                RunMenu();
                             }
                             break;
                         case "2":
+                            Console.Clear();
                             Console.WriteLine("Which door would you like to add?");
                             string newDoor = Console.ReadLine().ToUpper();
                             if (keyValuePairs.ContainsKey(badgeId))
                             {
+                                Console.Clear();
                                 _repo.AddDoor(badgeId, newDoor);
-                                Console.WriteLine("Door added.");
-                                Console.WriteLine(key + " has access to doors " + string.Join(" & ", values));
+                                Console.WriteLine("Door added.\n");
                                 AnyKey();
+                                Console.Clear();
+                                Console.WriteLine(key + " has access to doors " + string.Join(" & ", values));
+                                Console.WriteLine("\n");
+                                AnyKey();
+                                RunMenu();
                             }
                             break;
                         default:
@@ -142,20 +155,22 @@ namespace _03_Badges_Console
             }
             else
             {
-                Console.WriteLine("No such badge");
+                Console.WriteLine("No such badge...\n");
+                AnyKey();
             }
         }
         public void GetBadges()
         {
             Console.Clear();
             Dictionary<int, List<string>> keyValuePairs = _repo.GetBadges();
-            Console.WriteLine("Badge#           Door Access\n");
+            Console.WriteLine("Badge#             Door Access\n");
             foreach (var badge in keyValuePairs)
             {
                 int key = badge.Key;
                 List<string> values = badge.Value;
-                Console.WriteLine(key + "              [" + string.Join(",", values) + "]\n");
+                Console.WriteLine(key + "              [" + string.Join(",", values) + "]");
             }
+            Console.WriteLine("\n");
             AnyKey();
         }
         public void AnyKey()

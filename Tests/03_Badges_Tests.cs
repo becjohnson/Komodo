@@ -8,7 +8,7 @@ namespace Tests
     [TestClass]
     public class Badges_Tests
     {
-        private Badge _badges;
+        private readonly Dictionary<int, List<string>> _badgeDictionary = new Dictionary<int, List<string>>();
         private BadgeRepo _repo;
         [TestInitialize]
         public void Arrange()
@@ -38,13 +38,19 @@ namespace Tests
         public void AddDoor_ShouldComeBackTrue()
         {
             Badge badge = new Badge();
-            List<string> doors = new List<string> { "A5", "A6" };
-            bool addDoor = _repo.AddDoor(8272, "A6");
+            string door = "A4";
+            int id = 8272;
+            bool addDoor = _repo.AddDoor(id, door);
             Assert.IsTrue(addDoor);
         }
-        public bool DeleteBadge_ShouldReturnTrue()
+        [TestMethod]
+        public void DeleteBadge_ShouldReturnTrue()
         {
-            Assert.IsTrue(_repo.RemoveDoor(8272, "A6"));
+            Badge badge = new Badge();
+            BadgeRepo repo = new BadgeRepo();
+            bool deleteDoor = _repo.RemoveDoor(12345, "A5");
+            Assert.IsTrue(deleteDoor);
         }
+   
     }
 }

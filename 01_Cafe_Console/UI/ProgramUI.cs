@@ -12,6 +12,7 @@ namespace _01_Cafe_Console.UI
         private readonly MenuRepo _Repo = new MenuRepo();
         public void Run()
         {
+            SeedContent();
             RunMenu();
         }
         public void RunMenu()
@@ -31,7 +32,7 @@ namespace _01_Cafe_Console.UI
 "██║░██╔╝██╔══██╗████╗░████║██╔══██╗██╔══██╗██╔══██╗  ██╔══██╗██╔══██╗██╔════╝██╔════╝\n " +
 "█████═╝░██║░░██║██╔████╔██║██║░░██║██║░░██║██║░░██║  ██║░░╚═╝███████║█████╗░░█████╗░\n░" +
 " █╔═██╗░██║░░██║██║╚██╔╝██║██║░░██║██║░░██║██║░░██║  ██║░░██╗██╔══██║██╔══╝░░██╔══╝░░\n" +
-"██║░╚██╗╚█████╔╝██║░╚═╝░██║╚█████╔╝██████╔╝╚█████╔╝  ╚█████╔╝██║░░██║██║░░░░░███████╗\n" +
+" ██║░╚██╗╚█████╔╝██║░╚═╝░██║╚█████╔╝██████╔╝╚█████╔╝  ╚█████╔╝██║░░██║██║░░░░░███████╗\n" +
 "╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚═╝░╚════╝░╚═════╝░░╚════╝░  ░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚══════╝\n\n\n\n" +
                     "Enter the number of the option you'd like to select\n" +
                     "\n" +
@@ -96,7 +97,7 @@ namespace _01_Cafe_Console.UI
             List<Menu> listOfItems = _Repo.GetMenu();
             foreach (Menu menu in listOfItems)
             {
-                DisplayMusicians(menu);
+                DisplayMenu(menu);
             }
             AnyKey();
         }
@@ -110,7 +111,8 @@ namespace _01_Cafe_Console.UI
             {
                 if (itemInput == menu.Number)
                 {
-                    DisplayMusicians(menu);
+                    Console.Clear();
+                    DisplayMenu(menu);
                 }
             }
             AnyKey();
@@ -120,16 +122,18 @@ namespace _01_Cafe_Console.UI
             Console.WriteLine("Here is a list of items you can delete:");
             List<Menu> listOfItems = _Repo.GetMenu();
             ShowAllMenus();
-            Console.WriteLine("\n\n\nEnter the number of the item you would like to delete:");
+            Console.Clear();
+            Console.WriteLine("Enter the number of the item you would like to delete:");
             int numberInput = Convert.ToInt32(Console.ReadLine());
             foreach (Menu menu in listOfItems.ToList())
             {
                 if (numberInput == menu.Number)
                 {
+                    Console.Clear();
                     bool deleteMusician = _Repo.Remove(menu);
                     if (deleteMusician == true)
                     {
-                        Console.WriteLine("Item Deleted!");
+                        Console.WriteLine("Item Deleted!\n");
                         AnyKey();
                     }
                 }
@@ -140,14 +144,23 @@ namespace _01_Cafe_Console.UI
             Console.WriteLine("Press any key to continute...");
             Console.ReadKey();
         }
-        private void DisplayMusicians(Menu menu)
+        private void DisplayMenu(Menu menu)
         {
             Console.WriteLine(
                 $"Number: {menu.Number}\n" +
                 $"Name: {menu.Name}\n" +
                 $"Decription: {menu.Description}\n" +
                 $"Ingredients: {menu.Ingredients}\n" +
-                $"Price: {menu.Price}\n");
+                $"Price: ${menu.Price}\n");
+        }
+        public void SeedContent()
+        {
+            Menu item1 = new Menu(1, "Hamburger", "Tasty!", "Tomatoes, Beef, Wheat", 4.35m);
+            Menu item2 = new Menu(2, "Fries", "Crispy!", "Potatoes, Salt", 2.85m);
+            Menu item3 = new Menu(3, "Hot Fudge Sundae", "Sweet!", "Dairy, Chocolate, Nuts", 3.65m);
+            _Repo.AddMenuToDirectory(item1);
+            _Repo.AddMenuToDirectory(item2);
+            _Repo.AddMenuToDirectory(item3);
         }
     }
 }
