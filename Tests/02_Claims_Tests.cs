@@ -24,17 +24,15 @@ namespace Tests
         public void EnterNewClaim_ShouldAddClaimToDirectory()
         {
             Claim claim = new Claim();
-            ClaimRepo repository = new ClaimRepo();
-            bool addResult = repository.AddClaimToDirectory(claim);
+            bool addResult = _repo.AddClaimToDirectory(claim);
             Assert.IsTrue(addResult);
         }
         [TestMethod]
         public void SeeAllClaims_ShouldReturnCorrectCollection()
         {
             Claim claim = new Claim();
-            ClaimRepo repo = new ClaimRepo();
-            repo.AddClaimToDirectory(claim);
-            Queue<Claim> claims = repo.GetClaims();
+            _repo.AddClaimToDirectory(claim);
+            Queue<Claim> claims = _repo.GetClaims();
             bool directoryHasClaims = claims.Contains(claim);
             Assert.IsTrue(directoryHasClaims);
         }
@@ -42,9 +40,8 @@ namespace Tests
         public void GetNextClaim_ShouldReturnCorrectCollection()
         {
             Claim claim = new Claim();
-            ClaimRepo repo = new ClaimRepo();
-            repo.AddClaimToDirectory(claim);
-            Queue<Claim> claims = repo.GetNextClaim();
+            _repo.AddClaimToDirectory(claim);
+            Queue<Claim> claims = _repo.GetNextClaim();
             bool directoryHasClaims = claims.Contains(claim);
             Assert.IsTrue(directoryHasClaims);
         }

@@ -8,24 +8,6 @@ namespace Tests
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void AddMenuItem_ShouldReturnTrue()
-        {
-            Menu item = new Menu();
-            MenuRepo repository = new MenuRepo();
-            bool addResult = repository.AddMenuToDirectory(item);
-            Assert.IsTrue(addResult);
-        }
-        [TestMethod]
-        public void ShowAllMenuItems_ShouldReturnTrue()
-        {
-            Menu item = new Menu();
-            MenuRepo repository = new MenuRepo();
-            repository.AddMenuToDirectory(item);
-            List<Menu> items = repository.GetMenu();
-            bool hasItems = items.Contains(item);
-            Assert.IsTrue(hasItems);
-        }
         private MenuRepo _repo;
         [TestInitialize]
         public void Arrange()
@@ -33,6 +15,22 @@ namespace Tests
             _repo = new MenuRepo();
             Menu item1 = new Menu(1, "Hamburger", "Yummy!", "Tomatoes, Onions, Beef, Wheat", 4.35m);
             _repo.AddMenuToDirectory(item1);
+        }
+        [TestMethod]
+        public void AddMenuItem_ShouldReturnTrue()
+        {
+            Menu item = new Menu();
+            bool addResult = _repo.AddMenuToDirectory(item);
+            Assert.IsTrue(addResult);
+        }
+        [TestMethod]
+        public void ShowAllMenuItems_ShouldReturnTrue()
+        {
+            Menu item = new Menu();
+            _repo.AddMenuToDirectory(item);
+            List<Menu> items = _repo.GetMenu();
+            bool hasItems = items.Contains(item);
+            Assert.IsTrue(hasItems);
         }
         [TestMethod]
         public void DeleteMenu_ShouldReturnTrue()

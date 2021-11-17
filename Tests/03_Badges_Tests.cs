@@ -24,10 +24,9 @@ namespace Tests
         public void GetDictionary_ShouldReturnCorrectCollection()
         {
             List<string> doors = new List<string> { "A5", "A6" };
-            int id = 12345;
-            BadgeRepo repo = new BadgeRepo();
-            repo.CreateNewBadge(id, doors);
-            Dictionary<int, List<string>> badges = repo.GetBadges();
+            int id = 34567;
+            _repo.CreateNewBadge(id, doors);
+            Dictionary<int, List<string>> badges = _repo.GetBadges();
             bool hasBadges = doors.Contains("A5");
             Assert.IsTrue(hasBadges);
         }
