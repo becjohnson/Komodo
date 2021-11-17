@@ -165,9 +165,9 @@ namespace _03_Badges_Console
         }
         public void SeedContent()
         {
-            _repo.CreateNewBadge(1727, new List<string> { "A5", "A9" });
-            _repo.CreateNewBadge(1728, new List<string> { "A4", "A3" });
-            _repo.CreateNewBadge(1729, new List<string> { "A2", "A1" });
+            _repo.CreateNewBadge(12345, new List<string> { "A7" });
+            _repo.CreateNewBadge(22345, new List<string> { "A1", "A4", "B1", "B2" });
+            _repo.CreateNewBadge(32345, new List<string> { "A1", "A5" });
         }
     }
 }

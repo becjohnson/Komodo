@@ -13,9 +13,12 @@ namespace _03_Badges_Console.Repository
         {
             return _badgeDictionary;
         }
-        public void CreateNewBadge(int id, List<string> doors)
+        public bool CreateNewBadge(int id, List<string> doors)
         {
+            int startingCount = _badgeDictionary.Count;
             _badgeDictionary.Add(id, doors);
+            if (startingCount < _badgeDictionary.Count ? true : false) ;
+            return true;
         }
         public bool RemoveDoor(int id, string door)
         {
