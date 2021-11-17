@@ -15,7 +15,7 @@ namespace Tests
             _repo = new BadgeRepo();
         }
         [TestMethod]
-        public void AddBadgeToDictionary_ShouldComeBackTrue()
+        public void AddBadgeToDictionary_ShouldReturnTrue()
         {
             bool addBadge = _repo.CreateNewBadge(27187, new List<string> { "A9", "A5" });
             Assert.IsTrue(addBadge);
@@ -31,18 +31,18 @@ namespace Tests
             Assert.IsTrue(hasBadges);
         }
         [TestMethod]
-        public void AddDoor_ShouldComeBackTrue()
+        public void AddDoor_ShouldReturnTrue()
         {
             string door = "A4";
-            int id = 12345;
+            int id = 65478;
             bool addDoor = _repo.AddDoor(id, door);
             Assert.IsTrue(addDoor);
         }
         [TestMethod]
-        public void DeleteBadge_ShouldReturnTrue()
+        public void DeleteDoor_ShouldReturnTrue()
         {
             string door = "A5";
-            int id = 12345;
+            int id = 65478;
             bool deleteDoor = _repo.RemoveDoor(id, door);
             Assert.IsTrue(deleteDoor);
         }

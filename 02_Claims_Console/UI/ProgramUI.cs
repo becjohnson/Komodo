@@ -97,31 +97,13 @@ namespace _02_Claims_Console.UI
                 AnyKey();
             }
         }
-        private void AnyKey()
-        {
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-        }
-        private void DisplayClaims(Claim claim)
-        {
-            Console.WriteLine($"{claim.Id}      {claim.ClaimType}     {claim.Description}   ${claim.Amount}        {claim.DateOfIncident.ToString("MM/dd/yy")}                   {claim.DateOfClaim.ToString("MM/dd/yy")}            {claim.IsValid}");
-        }
-        private void SeedContent()
-        {
-            Claim claim1 = new Claim(1, ClaimType.Car, "Car accident on 465.", 400.00m, new DateTime(2018, 4, 25), new DateTime(2018, 4, 25), true);
-            Claim claim2 = new Claim(2, ClaimType.Home, "House fire in kitchen.", 4000.00m, new DateTime(2018, 4, 11), new DateTime(2018, 4, 12), true);
-            Claim claim3 = new Claim(3, ClaimType.Theft, "Stolen pancakes.", 4.00m, new DateTime(2018, 4, 27), new DateTime(2018, 6, 01), false);
-            _repo.AddClaimToDirectory(claim1);
-            _repo.AddClaimToDirectory(claim2);
-            _repo.AddClaimToDirectory(claim3);
-        }
         private void DisplayNextClaim()
         {
             Console.Clear();
             Queue<Claim> queueOfClaims = _repo.GetClaims();
-            Console.WriteLine("Here are the details for the next claim to be handled:\n\n");
             foreach (Claim claim in queueOfClaims.ToList())
             {
+                Console.WriteLine("Here are the details for the next claim to be handled:\n\n");
                 Console.WriteLine(
                     $"ClaimID: {claim.Id}\n" +
                     $"Type: {claim.ClaimType}\n" +
@@ -149,6 +131,24 @@ namespace _02_Claims_Console.UI
                 }
             }
             AnyKey();
+        }
+        private void AnyKey()
+        {
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+        private void DisplayClaims(Claim claim)
+        {
+            Console.WriteLine($"{claim.Id}      {claim.ClaimType}     {claim.Description}   ${claim.Amount}        {claim.DateOfIncident.ToString("MM/dd/yy")}                   {claim.DateOfClaim.ToString("MM/dd/yy")}            {claim.IsValid}");
+        }
+        private void SeedContent()
+        {
+            Claim claim1 = new Claim(1, ClaimType.Car, "Car accident on 465.", 400.00m, new DateTime(2018, 4, 25), new DateTime(2018, 4, 25), true);
+            Claim claim2 = new Claim(2, ClaimType.Home, "House fire in kitchen.", 4000.00m, new DateTime(2018, 4, 11), new DateTime(2018, 4, 12), true);
+            Claim claim3 = new Claim(3, ClaimType.Theft, "Stolen pancakes.", 4.00m, new DateTime(2018, 4, 27), new DateTime(2018, 6, 01), false);
+            _repo.AddClaimToDirectory(claim1);
+            _repo.AddClaimToDirectory(claim2);
+            _repo.AddClaimToDirectory(claim3);
         }
     }
 }

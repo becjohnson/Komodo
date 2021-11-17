@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class Cafe_Tests
     {
         private MenuRepo _repo;
         [TestInitialize]

@@ -10,8 +10,8 @@ namespace _03_Badges_Console.Repository
     {
         private readonly Dictionary<int, List<string>> _badgeDictionary = new Dictionary<int, List<string>>
         {
-            {12345, new List<string> {"A9", "A5" } },
-            {23456, new List<string> {"A7", "A8" } }
+            {65478, new List<string> {"A9", "A5" } },
+            {23457, new List<string> {"A7", "A8" } }
         };
         public Dictionary<int, List<string>> GetBadges()
         {
