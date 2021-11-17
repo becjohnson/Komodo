@@ -24,7 +24,8 @@ namespace _03_Badges_Console
                 Console.WriteLine("Hello Security Admin. What would you like to do?\n\n" +
                 "1. Add a badge\n" +
                 "2. Edit a badge\n" +
-                "3. List all badges\n");
+                "3. List all badges\n" +
+                "4. Exit\n");
                 string input = Console.ReadLine().ToLower();
                 switch (input)
                 {
@@ -36,6 +37,9 @@ namespace _03_Badges_Console
                         break;
                     case "3":
                         GetBadges();
+                        break;
+                    case "4":
+                        continueToRun = false;
                         break;
                     default:
                         Console.WriteLine("Please enter a valid selection.");

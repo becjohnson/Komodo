@@ -20,4 +20,3 @@ C:\Users\beaut\Desktop\Komodo\Tests\obj\Debug\Tests.pdb
 C:\Users\beaut\Desktop\Komodo\Tests\bin\Debug\03_Badges_Console.exe
 C:\Users\beaut\Desktop\Komodo\Tests\bin\Debug\03_Badges_Console.pdb
 C:\Users\beaut\Desktop\Komodo\Tests\bin\Debug\03_Badges_Console.exe.config
-C:\Users\beaut\Desktop\Komodo\Tests\obj\Debug\Tests.csproj.CopyComplete
