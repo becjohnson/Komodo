@@ -13,7 +13,6 @@ namespace Tests
         public void Arrange()
         {
             _repo = new BadgeRepo();
-            
         }
         [TestMethod]
         public void AddBadgeToDictionary_ShouldComeBackTrue()
@@ -24,7 +23,6 @@ namespace Tests
         [TestMethod]
         public void GetDictionary_ShouldReturnCorrectCollection()
         {
-            Badge badge = new Badge();
             List<string> doors = new List<string> { "A5", "A6" };
             int id = 12345;
             BadgeRepo repo = new BadgeRepo();
