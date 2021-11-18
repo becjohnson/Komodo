@@ -118,7 +118,7 @@ namespace _02_Claims_Console.UI
                 {
                     case "y":
                         Console.Clear();
-                        queueOfClaims.Dequeue();
+                        _repo.DeleteClaim();
                         Console.Clear();
                         _repo.GetNextClaim();
                         break;

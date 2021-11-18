@@ -24,5 +24,12 @@ namespace _02_Claims_Console.Repository
         {
             return _claimQueue;
         }
+        public bool DeleteClaim()
+        {
+            int startingCount = _claimQueue.Count;
+            _claimQueue.Dequeue();
+            bool wasDeleted = (_claimQueue.Count < startingCount) ? true : false;
+            return wasDeleted;
+        }
     }
 }

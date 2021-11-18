@@ -45,5 +45,12 @@ namespace Tests
             bool directoryHasClaims = claims.Contains(claim);
             Assert.IsTrue(directoryHasClaims);
         }
+        [TestMethod]
+        public void DeleteClaim()
+        {
+            _repo.DeleteClaim();
+            bool wasDeleted = _repo.DeleteClaim();
+            Assert.IsTrue(wasDeleted);
+        }
     }
 }
